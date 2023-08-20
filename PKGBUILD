@@ -210,7 +210,7 @@ build() {
   ${MINGW_PREFIX}/bin/cmake --build .
 }
 
-package_opencv() {
+package_opencv-4.7() {
   cd "${srcdir}/build-${MSYSTEM}"
   DESTDIR="${pkgdir}" ${MINGW_PREFIX}/bin/cmake --install .
 
@@ -218,7 +218,7 @@ package_opencv() {
   rm -r "${pkgdir}${MINGW_PREFIX}"/lib/python3*
 }
 
-package_python-opencv() {
+package_python-opencv-4.7() {
   pkgdesc='Python bindings for OpenCV (mingw-w64)'
   depends=(
     "${MINGW_PACKAGE_PREFIX}-opencv"
